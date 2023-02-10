@@ -1,0 +1,101 @@
+:root {
+	--auc-primary-color: #9698c3;
+	--auc-muted-color: #c4c4c4;
+	--auc-dark-color: #0f0f0f;
+}
+
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	outline: 0;
+	margin: 0;
+	border: 0;
+}
+
+body {
+	font-family: sans-serif;
+	padding: 5vw;
+}
+
+#heading + section > h3 {
+	display: none;
+}
+
+#intro, #heading, #getStarted {
+	margin: 5vh 0;
+}
+
+.aa-List {
+	display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.aa-List > li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#usedWith {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.result {
+	width: 20vmin;
+	height: 25vmin;
+	background: #eee;
+	border-radius: 10px;
+	border: 2px solid #555;
+	box-shadow: 2px 2px 5px #555;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 60% 40%;
+	grid-template-rows: 20vmin 1fr;
+	grid-template-areas: "img			img"
+						 "caption like";
+}
+
+.result.autocompleteSuggestion {
+	grid-template-columns: 100%;
+	grid-template-areas: "img"
+						 "caption";
+}
+
+.result > img {
+	width: 100%;
+	height: 20vmin;
+	object-fit: cover;
+	grid-area: img;
+}
+
+.result > span, .result > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.result > span {
+	grid-area: caption;
+	font-size: 2.2vmin;
+}
+
+.result > div {
+	grid-area: like;
+	cursor: pointer;
+	font-size: 3.5vmin;
+	transition: all 0.3s;
+	filter: grayscale(1);
+}
+
+.result > div:hover {
+	transform: scale(1.2);
+	filter: grayscale(0.7);
+}
+
+.result > div.liked {
+	filter: grayscale(0);
+}
